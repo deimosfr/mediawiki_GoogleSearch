@@ -1,0 +1,43 @@
+MediaWiki Google Search extension v0.1
+
+Made by Pierre Mavro <pierre@mavro.fr>
+Licenced under GPL v2
+
+= Minimum requirements =
+
+* MediaWiki 1.16+ (not tested <1.16)
+
+= Installation instructions =
+
+* Download the latest version of Google Search from :
+** The primary link : http://www.mediawiki.org/wiki/Extension:GoogleSearch
+** Alternate link : http://git.deimos.fr/gitweb/?p=mediawiki_extensions.git;a=snapshot;h=HEAD;sf=tgz
+** Download with git : git clone git://git.deimos.fr/git/mediawiki_extensions.git
+
+* Uncompress it in your extensions directory (ex. /var/www/mediawiki/extensions).
+
+* Edit your LocalSettings.conf and add those lines :
+
+# Google Search
+require_once( "$IP/extensions/GoogleSearch/GoogleSearch.php" );
+
+* Create an account and get the code from Google Co-op (CSE) / Google Adsense to replace in GoogleSearch.class.php
+  in the $bar['googleSearch'] value. It should looks like this :
+  $bar['googleSearch'] = "<form action=\"http://www.google.fr/cse\" id=\"cse-search-box\">
+  <div>
+    <input type=\"hidden\" name=\"cx\" value=\"partner-pub-YOUR_CODE_HERE\" />
+    <input type=\"hidden\" name=\"ie\" value=\"UTF-8\" />
+    <input type=\"text\" name=\"q\" size=\"15\" />
+    <input type=\"submit\" name=\"sa\" value=\"" .wfMsg('Search'). "\" />
+  </div>
+</form>";
+
+
+* That's all, now you can refresh your wiki and see the Google Search in your sidebar
+
+* Do not hesitate to contact me if you have some questions
+
+= Changelog =
+== v0.1 ==
+First release
+
