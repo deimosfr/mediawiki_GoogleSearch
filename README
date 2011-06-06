@@ -38,6 +38,9 @@ require_once( "$IP/extensions/GoogleSearch/GoogleSearch.php" );
 * Do not hesitate to contact me if you have some questions
 
 = Changelog =
+== v0.1.1 ==
+Search bar size fixed to 12px instead of 15px to avoid bad browser interpretation
+
 == v0.1 ==
 First release
 
