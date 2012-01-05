@@ -1,4 +1,4 @@
-MediaWiki Google Search extension v0.1
+MediaWiki Google Search extension v0.3
 
 Made by Pierre Mavro <pierre@mavro.fr>
 Licenced under GPL v2
@@ -20,24 +20,21 @@ Licenced under GPL v2
 
 # Google Search
 require_once( "$IP/extensions/GoogleSearch/GoogleSearch.php" );
+$wgGoogleSearchCSECode = "ENTER_YOUR_CSE_CODE_HERE";
 
-* Create an account and get the code from Google Co-op (CSE) / Google Adsense to replace in GoogleSearch.class.php
-  in the $bar['googleSearch'] value. It should looks like this :
-  $bar['googleSearch'] = "<form action=\"http://www.google.fr/cse\" id=\"cse-search-box\">
-  <div>
-    <input type=\"hidden\" name=\"cx\" value=\"partner-pub-YOUR_CODE_HERE\" />
-    <input type=\"hidden\" name=\"ie\" value=\"UTF-8\" />
-    <input type=\"text\" name=\"q\" size=\"15\" />
-    <input type=\"submit\" name=\"sa\" value=\"" .wfMsg('Search'). "\" />
-  </div>
-</form>";
-
+* Create an account and get the code from Google Co-op (CSE) / Google Adsense to replace the $wgGoogleSearchCSECode value in your LocalSettings
 
 * That's all, now you can refresh your wiki and see the Google Search in your sidebar
 
 * Do not hesitate to contact me if you have some questions
 
 = Changelog =
+== v0.3 ==
+Adding a var to avoid editing the code
+
+== v0.2 ==
+Correcting Mediawiki link extension website
+
 == v0.1.1 ==
 Search bar size fixed to 12px instead of 15px to avoid bad browser interpretation
 

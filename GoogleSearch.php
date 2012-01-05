@@ -34,7 +34,7 @@ $wgGoogleSearchLanguages  = 'fr,en';        // Languages included in the transla
  
 $wgExtensionCredits['other'][] = array(
         'name'           => 'Google Search',
-        'version'        => '0.2',
+        'version'        => '0.3',
         'author'         => 'Pierre Mavro',
         'description'    => 'Adds Google Search to the sidebar',
         'descriptionmsg' => 'googleSearch-desc',
