@@ -2,7 +2,7 @@
 /**
  * MediaWiki extension to add Google Search in a portlet in the sidebar.
  * Installation instructions can be found on
- * http://www.mediawiki.org/wiki/Extension:Google_Search
+ * http://www.mediawiki.org/wiki/Extension:GoogleSearch
  *
  * This extension will not add the Google Search portlet to *any* skin
  * that is used with MediaWiki. Because of inconsistencies in the skin
@@ -34,11 +34,11 @@ $wgGoogleSearchLanguages  = 'fr,en';        // Languages included in the transla
  
 $wgExtensionCredits['other'][] = array(
         'name'           => 'Google Search',
-        'version'        => '0.1.1',
+        'version'        => '0.2',
         'author'         => 'Pierre Mavro',
         'description'    => 'Adds Google Search to the sidebar',
         'descriptionmsg' => 'googleSearch-desc',
-        'url'            => 'http://www.mediawiki.org/wiki/Extension:Google_Search',
+        'url'            => 'http://www.mediawiki.org/wiki/Extension:GoogleSearch',
 );
  
 // Register class and localisations
