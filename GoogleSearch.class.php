@@ -13,9 +13,11 @@ $wgGoogleSearchCSECode ="";
 
 class GoogleSearch {
         static function GoogleSearchInSidebar( $skin, &$bar ) {
-                global $wgGoogleSearchOriginal,$wgGoogleSearchLanguages,$wgGoogleSearchCSECode;
- 
-                wfLoadExtensionMessages( 'Google Search' );
+                global $wgGoogleSearchOriginal,$wgGoogleSearchLanguages,$wgGoogleSearchCSECode, $wgVersion;
+
+                if ($wgVersion <= 1.16) { 
+                    wfLoadExtensionMessages( 'Google Search' );
+                }
                 $bar['googleSearch'] = "<form action=\"http://www.google.fr/cse\" id=\"cse-search-box\">
   <div>
     <input type=\"hidden\" name=\"cx\" value=\"" . $wgGoogleSearchCSECode . "\" />

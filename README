@@ -29,6 +29,9 @@ $wgGoogleSearchCSECode = "ENTER_YOUR_CSE_CODE_HERE";
 * Do not hesitate to contact me if you have some questions
 
 = Changelog =
+== v0.4 ==
+Compatible with MediaWiki 1.21
+
 == v0.3 ==
 Adding a var to avoid editing the code
 
