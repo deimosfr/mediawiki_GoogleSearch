@@ -1,6 +1,6 @@
 <?php
 /**
- * MediaWiki extension to add Google Search in a portlet in the sidebar.
+ * MediaWiki extension to add Google Search in a portlet in the sidebar.                                                                                                                                                                                                [0/280]
  * Installation instructions can be found on
  * http://www.mediawiki.org/wiki/Extension:GoogleSearch
  *
@@ -34,7 +34,7 @@ $wgGoogleSearchLanguages  = 'fr,en';        // Languages included in the transla
  
 $wgExtensionCredits['other'][] = array(
         'name'           => 'Google Search',
-        'version'        => '0.4',
+        'version'        => '0.5',
         'author'         => 'Pierre Mavro',
         'description'    => 'Adds Google Search to the sidebar',
         'descriptionmsg' => 'googleSearch-desc',
@@ -47,4 +47,26 @@ $wgAutoloadClasses['GoogleSearch'] = $dir . 'GoogleSearch.class.php';
 $wgExtensionMessagesFiles['GoogleSearch'] = $dir . 'GoogleSearch.i18n.php';
  
 // Hook to modify the sidebar
-$wgHooks['SkinBuildSidebar'][] = 'GoogleSearch::GoogleSearchInSidebar';
+$wgHooks['SkinBuildSidebar'][] = 'fngooglesearch';
+
+# Define default value
+$wgGoogleSearchCSECode =""; 
+
+function fngooglesearch( $skin, &$bar ) {
+    global $wgGoogleSearchOriginal,$wgGoogleSearchLanguages,$wgGoogleSearchCSECode;
+    if ($wgVersion <= 1.16) { 
+        wfLoadExtensionMessages( 'Google Search' );
+    }
+    $out = "
+<div><form action=\"http://www.google.fr/cse\" id=\"cse-search-box\">
+    <input type=\"hidden\" name=\"cx\" value=\"" . $wgGoogleSearchCSECode . "\" />
+    <input type=\"hidden\" name=\"ie\" value=\"UTF-8\" />
+    <input type=\"text\" name=\"q\" size=\"12\" />
+    <input type=\"submit\" name=\"sa\" value=\"" .wfMsg('Search'). "\" />
+</form></div>";
+
+    $bar[ 'Google Search' ] = $out;
+    return true;
+}
+
+
